@@ -1,0 +1,144 @@
+[gd_scene load_steps=6 format=3 uid="uid://b8f1gik8vvyjm"]
+
+[ext_resource type="Texture2D" uid="uid://ctbmnnxl8ggv0" path="res://images/star_05.png" id="1_1b7ro"]
+[ext_resource type="Texture2D" uid="uid://dka7n8ppvvu3" path="res://images/coin2_20x20.png" id="2_c54sb"]
+[ext_resource type="PackedScene" uid="uid://b7hgowuqksoia" path="res://player.tscn" id="2_jv4tx"]
+[ext_resource type="PackedScene" uid="uid://dy6ssmj60j5jp" path="res://coin.tscn" id="4_h8nk2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b6hkr"]
+size = Vector2(1439, 25)
+
+[node name="mainScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="world" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="background" type="ColorRect" parent="world"]
+light_mask = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.352941, 0.584314, 0.619608, 1)
+
+[node name="PointLight2D" type="PointLight2D" parent="world"]
+position = Vector2(567, 438)
+color = Color(0, 0.796078, 0.698039, 1)
+energy = 1.06
+range_layer_min = -1
+range_item_cull_mask = 2
+texture = ExtResource("1_1b7ro")
+texture_scale = 6.66
+
+[node name="floor" type="StaticBody2D" parent="world"]
+position = Vector2(11, 491)
+
+[node name="ColorRect" type="ColorRect" parent="world/floor"]
+offset_left = -99.0
+offset_top = 1.0
+offset_right = 1314.0
+offset_bottom = 332.0
+color = Color(0.317647, 0.0627451, 0.0784314, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="world/floor"]
+position = Vector2(607.5, 12.5)
+shape = SubResource("RectangleShape2D_b6hkr")
+
+[node name="HUD" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 42.0
+offset_top = 30.0
+offset_right = 298.0
+offset_bottom = 70.0
+
+[node name="coinsCount" type="Label" parent="HUD"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 50.0
+offset_top = -22.0
+offset_right = 197.0
+offset_bottom = 20.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "0 "
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="HUD"]
+position = Vector2(25, 19)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_c54sb")
+hframes = 9
+
+[node name="player" parent="." instance=ExtResource("2_jv4tx")]
+position = Vector2(139, 370)
+
+[node name="Node" type="Node" parent="."]
+
+[node name="coin" parent="Node" instance=ExtResource("4_h8nk2")]
+position = Vector2(338, 442)
+
+[node name="coin11" parent="Node" instance=ExtResource("4_h8nk2")]
+position = Vector2(338, 394)
+
+[node name="coin12" parent="Node" instance=ExtResource("4_h8nk2")]
+position = Vector2(361, 423)
+
+[node name="coin13" parent="Node" instance=ExtResource("4_h8nk2")]
+position = Vector2(412, 407)
+
+[node name="coin14" parent="Node" instance=ExtResource("4_h8nk2")]
+position = Vector2(423, 440)
+
+[node name="coin15" parent="Node" instance=ExtResource("4_h8nk2")]
+position = Vector2(464, 431)
+
+[node name="coin16" parent="Node" instance=ExtResource("4_h8nk2")]
+position = Vector2(606, 441)
+
+[node name="coin17" parent="Node" instance=ExtResource("4_h8nk2")]
+position = Vector2(647, 453)
+
+[node name="coin18" parent="Node" instance=ExtResource("4_h8nk2")]
+position = Vector2(623, 422)
+
+[node name="coin19" parent="Node" instance=ExtResource("4_h8nk2")]
+position = Vector2(654, 424)
+
+[node name="coin20" parent="Node" instance=ExtResource("4_h8nk2")]
+position = Vector2(579, 429)
+
+[node name="coin5" parent="Node" instance=ExtResource("4_h8nk2")]
+position = Vector2(374, 400)
+
+[node name="coin6" parent="Node" instance=ExtResource("4_h8nk2")]
+position = Vector2(380, 445)
+
+[node name="coin7" parent="Node" instance=ExtResource("4_h8nk2")]
+position = Vector2(442, 414)
+
+[node name="coin8" parent="Node" instance=ExtResource("4_h8nk2")]
+position = Vector2(622, 439)
+
+[node name="coin9" parent="Node" instance=ExtResource("4_h8nk2")]
+position = Vector2(597, 420)
+
+[node name="coin10" parent="Node" instance=ExtResource("4_h8nk2")]
+position = Vector2(584, 453)
+
+[node name="coin2" parent="Node" instance=ExtResource("4_h8nk2")]
+position = Vector2(456, 453)
+
+[node name="coin3" parent="Node" instance=ExtResource("4_h8nk2")]
+position = Vector2(615, 441)
+
+[node name="coin4" parent="Node" instance=ExtResource("4_h8nk2")]
+position = Vector2(617, 459)
